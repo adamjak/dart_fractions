@@ -1,3 +1,6 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.2]
+ - Adding functions: max, min, pow, log, reciprocal, inPercentage, toDouble and toInt
 
-* TODO: Describe initial release.
+## [0.0.1]
+ - Base functions for create adding(+), subtract(-), multiply(×) and divide(÷)
+
