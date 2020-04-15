@@ -2,7 +2,7 @@ name: fractions
 description: Simple fractions library
 version: 0.0.1
 author: Tomas Adamjak
-homepage:
+homepage: https://github.com/adamjak/dart_fractions
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
