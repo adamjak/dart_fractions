@@ -1,0 +1,21 @@
+name: fractions
+description: Simple fractions library
+version: 0.0.1
+author: Tomas Adamjak
+homepage:
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dart_numerics: ^0.0.5
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
