@@ -1,7 +1,7 @@
 library fractions;
 
 import 'dart:core';
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:fractions/fraction_constants.dart';
 
@@ -79,8 +79,8 @@ class Fraction implements Comparable<Fraction> {
     int intPart = d.toInt();
     d = d - intPart;
 
-    int numerator = (d * pow(10, FractionConstants.getIntDigits())).toInt();
-    int denominator = pow(10, FractionConstants.getIntDigits()).toInt();
+    int numerator = (d * math.pow(10, FractionConstants.getIntDigits())).toInt();
+    int denominator = math.pow(10, FractionConstants.getIntDigits()).toInt();
 
     if (negative) {
       numerator = numerator * -1;
@@ -141,6 +141,62 @@ class Fraction implements Comparable<Fraction> {
     new ArgumentError(FractionConstants.ERR_PARAMETER_TYPE_IS_NOT_SUPPERTED);
   }
 
+  Fraction max (Fraction other) {
+    if (other == null) new ArgumentError(FractionConstants.ERR_NULL_FRACTION);
+    return this.compareTo(other) >= 0 ? this : other;
+  }
+
+  Fraction min (Fraction other) {
+    if (other == null) new ArgumentError(FractionConstants.ERR_NULL_FRACTION);
+    return this.compareTo(other) < 0 ? this : other;
+  }
+
+  Fraction pow (double exponent) {
+    if (exponent == null) new ArgumentError("Exponent can't be null.");
+
+    if(exponent == 0) {
+			return Fraction.createFractionFromNumber(1);
+		} else if (exponent == 1) {
+			return Fraction.createFractionFromNumeratorDenominator(this.numerator,this.denominator);
+		} else if (exponent < 0) {
+			return Fraction.createFractionFromNumeratorDenominator(
+          math.pow(this.denominator, -exponent),
+          math.pow(this.numerator, -exponent)
+      );
+		} else{
+			return Fraction.createFractionFromNumeratorDenominator(
+          math.pow(this.numerator, exponent),
+          math.pow(this.denominator, exponent)
+      );
+		}
+  }
+
+  Fraction reciprocal() {
+		if (this.numerator == 0) throw new Error();
+
+		return Fraction.createFractionFromNumeratorDenominator(this.denominator, this.numerator);
+	}
+
+  double inPercentage() {
+    return this.toDouble() * 100;
+  }
+
+  double log()
+  {
+    return math.log(this.numerator) - math.log(this.denominator);
+  }
+
+  double toDouble () {
+    return this.numerator / this.denominator;
+  }
+
+  int toInt() {
+    return this.toDouble().round();
+  }
+
+  Fraction clone () {
+    return Fraction.createFractionFromNumeratorDenominator(this.numerator.toInt(), this.denominator.toInt());
+  }
 
   Fraction _add (Fraction other) {
     return Fraction._createFraction(
@@ -171,7 +227,7 @@ class Fraction implements Comparable<Fraction> {
               _denominator == other._denominator;
 
   @override
-  int get hashCode => _numerator.hashCode ^ _denominator.hashCode;
+  int get hashCode =>   _numerator.hashCode ^ _denominator.hashCode;
 
   @override
   String toString () {

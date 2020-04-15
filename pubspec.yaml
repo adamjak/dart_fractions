@@ -1,7 +1,6 @@
 name: fractions
 description: Simple fractions library
-version: 0.0.1
-author: Tomas Adamjak <tomas@adamjak.net>
+version: 0.0.2
 homepage: https://github.com/adamjak/dart_fractions
 
 environment:
