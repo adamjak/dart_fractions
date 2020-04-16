@@ -1,4 +1,4 @@
-## [pre-v0.1 release]
+## [0.1.0]
  - Adding example
 
 ## [0.0.3]
