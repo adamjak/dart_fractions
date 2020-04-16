@@ -1,3 +1,6 @@
+## [pre-v0.1 release]
+ - Adding example
+
 ## [0.0.3]
  - Adding some doc. and edit code for more efficient.
 

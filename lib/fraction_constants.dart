@@ -5,7 +5,7 @@ class FractionConstants {
   // Utils constants
   // -------------------------------------------------------------------------
   static const int ONE = 1;
-	static const int ZERO = 0;
+  static const int ZERO = 0;
 
   // -------------------------------------------------------------------------
   // Error texts
@@ -18,8 +18,8 @@ class FractionConstants {
   static const String ERR_NUMBER_NAN = "Number is NaN.";
   static const String ERR_NUMBER_INFINITE = "Number is infinite.";
   static const String ERR_NULL_PARAMETER = "Parameter is null.";
-  static const String ERR_PARAMETER_TYPE_IS_NOT_SUPPERTED = "Parameter type is not supported.";
-
+  static const String ERR_PARAMETER_TYPE_IS_NOT_SUPPERTED =
+      "Parameter type is not supported.";
 
   static int getIntDigits() {
     return (numerics.int64MaxValue.toString().length - 1);
