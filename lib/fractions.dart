@@ -87,9 +87,8 @@ class Fraction implements Comparable<Fraction> {
     }
 
     Fraction f = Fraction.createFractionFromNumeratorDenominator(numerator,denominator);
-    f = f + intPart;
 
-    return f;
+    return (f + intPart);
   }
 
   Fraction operator +(var other) {
@@ -97,7 +96,7 @@ class Fraction implements Comparable<Fraction> {
     if (other.runtimeType == Fraction) {
       return this._add(other);
     }
-    if (other.runtimeType == num) {
+    if (other.runtimeType == num || other.runtimeType == int || other.runtimeType == double) {
       return this._add(Fraction.createFractionFromNumber(other));
     }
 
@@ -109,7 +108,7 @@ class Fraction implements Comparable<Fraction> {
     if (other.runtimeType == Fraction) {
       return this._subtract(other);
     }
-    if (other.runtimeType == num) {
+    if (other.runtimeType == num || other.runtimeType == int || other.runtimeType == double) {
       return this._subtract(Fraction.createFractionFromNumber(other));
     }
 
@@ -121,7 +120,7 @@ class Fraction implements Comparable<Fraction> {
     if (other.runtimeType == Fraction) {
       return this._multiply(other);
     }
-    if (other.runtimeType == num) {
+    if (other.runtimeType == num || other.runtimeType == int || other.runtimeType == double) {
       return this._multiply(Fraction.createFractionFromNumber(other));
     }
 
@@ -133,7 +132,7 @@ class Fraction implements Comparable<Fraction> {
     if (other.runtimeType == Fraction) {
       return this._divide(other);
     }
-    if (other.runtimeType == num) {
+    if (other.runtimeType == num || other.runtimeType == int || other.runtimeType == double) {
       if (other == 0) new ArgumentError(FractionConstants.ERR_DIVITE_BY_ZERO);
       return this._divide(Fraction.createFractionFromNumber(other));
     }

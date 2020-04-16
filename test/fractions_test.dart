@@ -3,6 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fractions/fractions.dart';
 
 void main() {
+
+  test('fraction create test', () {
+    Fraction f1 = Fraction.createFractionFromNumber(0.5);
+    expect(f1, Fraction.createFractionFromNumeratorDenominator(1, 2));
+  });
+
   test('fraction + test', () {
     Fraction f1 = Fraction.createFractionFromNumeratorDenominator(1, 2);
     Fraction f2 = Fraction.createFractionFromNumeratorDenominator(3, 4);
