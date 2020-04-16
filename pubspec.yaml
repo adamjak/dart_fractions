@@ -1,6 +1,6 @@
 name: fractions
-description: Simple fractions library
-version: 0.0.2
+description: Simple math fractions library. Library create simple fraction and define basic math operations.
+version: 0.0.3
 homepage: https://github.com/adamjak/dart_fractions
 
 environment:

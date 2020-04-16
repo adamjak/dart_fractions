@@ -1,7 +1,5 @@
 import 'package:dart_numerics/dart_numerics.dart' as numerics;
 
-import 'fractions.dart';
-
 class FractionConstants {
   // -------------------------------------------------------------------------
   // Utils constants

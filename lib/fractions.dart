@@ -56,7 +56,7 @@ class Fraction implements Comparable<Fraction> {
 
     int gcd = Fraction._greatestCommonDivisor(numerator.abs(), denominator.abs());
 
-    return new Fraction._((numerator / gcd).toInt(), (denominator / gcd).toInt());
+    return new Fraction._((numerator ~/ gcd), (denominator ~/ gcd));
   }
 
   static Fraction _createFractionFromDouble (double d) {
@@ -141,11 +141,13 @@ class Fraction implements Comparable<Fraction> {
     new ArgumentError(FractionConstants.ERR_PARAMETER_TYPE_IS_NOT_SUPPERTED);
   }
 
+  /// Return bigger fraction from this and [other]
   Fraction max (Fraction other) {
     if (other == null) new ArgumentError(FractionConstants.ERR_NULL_FRACTION);
     return this.compareTo(other) >= 0 ? this : other;
   }
 
+  /// Return smaller fraction from this and [other]
   Fraction min (Fraction other) {
     if (other == null) new ArgumentError(FractionConstants.ERR_NULL_FRACTION);
     return this.compareTo(other) < 0 ? this : other;
@@ -181,6 +183,7 @@ class Fraction implements Comparable<Fraction> {
     return this.toDouble() * 100;
   }
 
+  /// Create natural log of this fraction
   double log()
   {
     return math.log(this.numerator) - math.log(this.denominator);
